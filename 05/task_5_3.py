@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
-intf_mode = input('Enter interface mode (access/trunk): ')
-intf_type = input('Enter interface type and number: ')
+interface_mode = input('Enter interface mode (access/trunk): ')
+interface = input('Enter interface type and number: ')
 vlans = input('Enter vlan(s): ')
-print(intf_mode + '\n' + intf_type + '\n' + vlans)
+print(interface_mode + '\n' + interface + '\n' + vlans)
 
-
-#a = list(intf_mode + '_template')
 access_template = [
     'switchport mode access', 'switchport access vlan {}',
     'switchport nonegotiate', 'spanning-tree portfast',
@@ -18,14 +16,14 @@ trunk_template = [
 ]
 
 template = access_template + trunk_template
-str_template = '\n'.join(template)
-a = str_template.index(intf_mode)
 
-print('Interface ' + intf_type + '\n')
-print(str_template.format(vlans))
-#print(str_template)
-print(a)
+kek = template[5]
+template.remove(kek)
+template.insert(6,kek)
 
-
-
-#print('\n'.join(access_template.format(vlans)))
+b = template.index('switchport mode ' + interface_mode)
+print('\nInterface ' + interface)
+lol = template[5]
+template.remove(lol)
+template.insert(6,lol)
+print(('\n'.join(template[b:5 + b])).format(vlans))
