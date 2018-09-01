@@ -1,1 +1,4 @@
-
+#Do not track vim swap and *.save files 
+*.save
+*.swp
+*.un~
