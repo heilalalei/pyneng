@@ -5,9 +5,9 @@ word_list = [
 ]
 
 num = input('Enter a number from num_list:\n')
-print(9-num_list[::-1].index(int(num)))
+print(len(num_list)-1-num_list[::-1].index(int(num)))
 word = input('Enter a word from word_list:\n')
-print(7-word_list[::-1].index(word))
+print(len(word_list)-1-word_list[::-1].index(word))
 
 
 
