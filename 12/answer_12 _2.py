@@ -45,4 +45,4 @@ def check_ip_availability():
 		check_ip_addresses(ip_list)
 	
 if __name__ == "__main__":
-	check_ip_availability()
+	print(check_ip_availability())
